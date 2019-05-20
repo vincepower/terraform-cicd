@@ -1,0 +1,5 @@
+project_name = "temporary-test-account"
+region = "us-central1"
+zone = "us-central1-a"
+cred_file = "~/serviceaccount.json"
+network_name = "terraform-example"

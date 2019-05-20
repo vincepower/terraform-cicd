@@ -19,9 +19,24 @@ All documentation is available on the [Terraform website](http://www.terraform.i
 Files for this Demonstration
 ----------------------------
 
-gcp.tf - Includes the basic information to connect to the cloud provider
-gke.tf - Includes the basic resource information to stand up a GKE cluster
-vars.tf - Any variables that are needed.
+README.md - This file
+
+LICENSE - Just a standard Apache license
+
+.gitignore - Default .gitignore file for a Terraform project on GitHub
+
+gcp.tf - Basic connection information for the provider (GCP in this case)
+
+compute.tf - Includes the information to create a new instance and run a startup script
+
+network.tf - The resource to create a new VPC
+
+bootstrap.sh - Used as a startup script in GCP
+
+vars.tf - To use a variable from .tfvars or the environment it needs to be declared
+
+terraform.tfvars.example - Default variables and .tfvars are not committed by default with our .gitignore file
+
 
 Using this Demonstration
 ------------------------
@@ -30,6 +45,10 @@ Using this Demonstration
 # Retrieving the configuration files from GitHub
 $ git clone https://github.com/vincepower/terraform-cicd.git
 $ cd terraform-cicd
+
+# Edit terraform.tfvars.example and save it as terraform.tfvars
+$ cp terraform.tfvars.example terraform.tfvars
+$ vi terraform.tfvars
 
 # Init creates all the required suppoort files in the directory
 # these do not usually go in source control
